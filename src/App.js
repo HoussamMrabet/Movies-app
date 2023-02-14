@@ -14,7 +14,6 @@ export default function App() {
     const response = await fetch(`${API_URL}&s=${title}`);
 
     const data = await response.json();
-
     setMovies(data.Search);
   };
 
@@ -24,10 +23,10 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>MovieLand</h1>
+      <h1>tfrj bla frcha demo</h1>
       <div className="search">
         <input
-          placeholder="Search for movies"
+          placeholder="series mkhrb9in chof ghir l movies"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -35,8 +34,8 @@ export default function App() {
       </div>
       {movies?.length > 0 ? (
         <div className="container">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} />
+          {movies.map((movie, index) => (
+            <MovieCard key={movie.imdbId+""+index} movie={movie} />
           ))}
         </div>
       ) : (

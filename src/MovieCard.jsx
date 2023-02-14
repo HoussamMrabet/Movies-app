@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MovieCard({movie}) {
   return (
-    <div className="movie">
+    <a href={`https://autoembed.to/movie/imdb/${movie.imdbID}`} className="movie">
       <div>
         <p>{movie.Year}</p>
       </div>
@@ -20,6 +20,6 @@ export default function MovieCard({movie}) {
         <span>{movie.Type}</span>
         <h3>{movie.Title}</h3>
       </div>
-    </div>
+    </a>
   );
 }
