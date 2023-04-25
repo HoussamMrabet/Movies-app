@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 import "./App.css";
 import SearchIcon from "./search.svg";
 
-const API_URL = "https://www.omdbapi.com?apikey=d0c469b0";
+const API_URL = "https://www.omdbapi.com?apikey="+process.env.REACT_APP_OMDB_API_KEY;
 
 export default function App() {
   const [movies, setMovies] = useState([]);
@@ -23,10 +23,10 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>tfrj bla frcha demo</h1>
+      <h1>MoviesLand</h1>
       <div className="search">
         <input
-          placeholder="series mkhrb9in chof ghir l movies"
+          placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
